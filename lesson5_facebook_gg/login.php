@@ -38,7 +38,7 @@ Nguyễn Duy Huy - 19/7/2022
             <?php
         } else {
             include './facebook_source.php';
-            //include './google_source.php';
+            include './google_source.php';
             ?>
             <div id="user_login" class="box-content">
                 <h1>Đăng nhập tài khoản</h1>
