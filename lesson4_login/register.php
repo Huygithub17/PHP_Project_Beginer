@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!--
+Nguyễn Duy Huy _ 18/7/2022 _ok
+-->
 <html>
     <head>
         <title>Bài 4: Tạo form đăng ký, đăng nhập hệ thống</title>

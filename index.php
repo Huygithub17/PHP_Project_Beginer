@@ -10,7 +10,7 @@
 		}
 		#user-info{
 			border: 1px solid #ccc;
-			width: 700px;
+			width: 900px;
 			margin: 0 auto;
 			padding: 25px;
 		}
@@ -34,11 +34,12 @@
     <div id="user-info">
         <h1> Danh sách tài khoản</h1>
         <a href="./create_user.php"> Tạo tài khoản</a>
-        <table id="user-listing" style="width: 700px;">
+        <table id="user-listing" style="width: 900px;">
             <tr>
                 <td>Username</td>
                 <td>Trạng thái</td>
                 <td>Full name</td>
+                <td>Email</td>
                 <td>Ngày sinh</td>
                 <td>Cập nhật lần cuối</td>
                 <td>Sửa</td>
@@ -51,6 +52,7 @@
                 <td><?= $row['username']?></td>
                 <td><?= $row['status']==1 ? "kích hoạt": "Block"?></td>
                 <td><?= $row['fullname']?></td>
+                <td><?= $row['email']?></td>
                 <td><?= $row['birthday']?></td>
                 <td><?= date('d/m/Y H:i',$row['created_time'])?></td>
                 <td><a href="./edit_user.php?id=<?= $row['id']?>"> Sửa</a></td>
