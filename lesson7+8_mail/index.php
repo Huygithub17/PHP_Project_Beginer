@@ -49,13 +49,29 @@ include './function.php';
             } elseif (empty($_POST['content'])) { //Kiểm tra xem trường content có rỗng không?
                 $error = "Bạn phải nhập nội dung";
             }
+            // For Single file:
+            if ($_FILES['file_upload'] == "") {
+                echo "chưa chọn file"; exit; 
+            }
+
+            //For Multiple files:
+            /* if ($_FILES['file_upload']['tmp_name'][0] == "") {
+                echo "chưa chọn file"; exit; 
+            } */
+
+            //-----------------------------------------
             if (isset($_FILES['file_upload'])) {
-                $uploadedFiles = $_FILES['file_upload'];
-                $result = uploadFiles($uploadedFiles);
-                if (!empty($result['errors'])) {
-                    $error = $result['errors'];
-                } else {
-                    $uploadedFiles = $result['uploaded_files'];
+                if ($_FILES['file_upload']['tmp_name'][0] == "") {
+                    //$error = "Bạn chưa chọn file upload";
+                }else{
+                    $uploadedFiles = $_FILES['file_upload'];
+                    //
+                    $result = uploadFiles($uploadedFiles);
+                    if (!empty($result['errors'])) {
+                        $error = $result['errors'];
+                    } else {
+                        $uploadedFiles = $result['uploaded_files'];
+                    }
                 }
             }
             if (!isset($error)) {
